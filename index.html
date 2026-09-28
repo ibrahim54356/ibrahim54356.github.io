@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ibrahim Abdo | Desktop Software & AI Automation Engineer</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              400: '#2dd4bf',
+              500: '#14b8a6',
+              600: '#0d9488',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #080c14;
+      background-image: 
+        radial-gradient(at 15% 15%, rgba(20, 184, 166, 0.08) 0px, transparent 45%),
+        radial-gradient(at 85% 75%, rgba(99, 102, 241, 0.07) 0px, transparent 45%);
+      background-attachment: fixed;
+    }
+
+    /* Balanced Glassmorphism */
+    .glass-card {
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .glass-card:hover {
+      background: rgba(15, 23, 42, 0.78);
+      border-color: rgba(20, 184, 166, 0.32);
+      box-shadow: 0 16px 36px -12px rgba(20, 184, 166, 0.12);
+    }
+
+    /* Ambient Cursor Spotlight Glow */
+    #cursor-glow {
+      position: fixed;
+      width: 550px;
+      height: 550px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(20, 184, 166, 0.055) 0%, transparent 70%);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      transition: opacity 0.4s ease;
+    }
+  </style>
+</head>
+
+<body class="text-slate-200 antialiased font-sans selection:bg-brand-500 selection:text-black">
+
+  <!-- Background Ambient Cursor Glow -->
+  <div id="cursor-glow"></div>
+
+  <!-- ========================================================
+       TOP NAVIGATION BAR
+       ======================================================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-card !border-x-0 !border-t-0 px-6 py-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="#hero" class="text-xl font-bold font-mono tracking-tight text-white flex items-center gap-1.5 group">
+        <span class="text-brand-400 group-hover:-translate-x-0.5 transition-transform">&lt;</span>
+        <span>Ibrahim.Dev</span>
+        <span class="text-brand-400 group-hover:translate-x-0.5 transition-transform">/&gt;</span>
+      </a>
+      
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
+        <a href="#about" class="nav-link hover:text-brand-400 transition-colors">About</a>
+        <a href="#skills" class="nav-link hover:text-brand-400 transition-colors">Skills</a>
+        <a href="#services" class="nav-link hover:text-brand-400 transition-colors">Services</a>
+        <a href="#projects" class="nav-link hover:text-brand-400 transition-colors">Projects</a>
+        <a href="#experience" class="nav-link hover:text-brand-400 transition-colors">Experience</a>
+        <a href="#testimonials" class="nav-link hover:text-brand-400 transition-colors">Reviews</a>
+      </nav>
+
+      <a href="#contact" class="px-4 py-2 text-xs md:text-sm font-semibold rounded-lg bg-brand-500 hover:bg-brand-400 text-slate-950 transition-all duration-300 shadow-lg shadow-brand-500/20 hover:shadow-brand-500/35 hover:scale-[1.02] active:scale-[0.98]">
+        Let's Talk
+      </a>
+    </div>
+  </header>
+
+  <main class="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-24 space-y-32">
+
+    <!-- ========================================================
+         COMPONENT 1: COVER / HERO (DEPI Standard)
+         ======================================================== -->
+    <section id="hero" class="min-h-[75vh] flex flex-col-reverse lg:flex-row items-center justify-between gap-12 pt-6">
+      <div class="flex-1 space-y-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-400 text-xs font-mono uppercase tracking-wider backdrop-blur-md">
+          <span class="w-2 h-2 rounded-full bg-brand-400 animate-pulse"></span> Available for Desktop & AI Automation Work
+        </div>
+
+        <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight">
+          Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-teal-200 to-white">Ibrahim Abdo</span>
+        </h1>
+
+        <p class="text-xl sm:text-2xl text-slate-300 font-medium">
+          Python Desktop & Local AI Automation Engineer
+        </p>
+
+        <!-- Unique Selling Proposition (USP) as mandated by DEPI Guidelines -->
+        <div class="p-4 rounded-xl border border-brand-500/20 bg-slate-900/50 backdrop-blur-md font-mono text-sm text-slate-300 transition-all hover:border-brand-500/40">
+          "I help businesses and technical teams eliminate manual workload by developing responsive CustomTkinter desktop applications and 100% private, self-hosted LLM automation engines."
+        </div>
+
+        <div class="flex flex-wrap items-center gap-4 pt-2">
+          <a href="#projects" class="px-6 py-3 rounded-lg bg-brand-500 hover:bg-brand-400 text-slate-950 font-semibold transition-all duration-300 shadow-lg shadow-brand-500/20 hover:shadow-brand-500/35 hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2">
+            View Live Case Studies <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
+          </a>
+          <a href="#contact" class="px-6 py-3 rounded-lg glass-card text-white font-semibold transition-all hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2">
+            Get In Touch <i data-lucide="send" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Profile Picture Section -->
+      <div class="flex-1 flex justify-center lg:justify-end">
+        <div class="relative group">
+          <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-brand-500 to-indigo-500 opacity-25 group-hover:opacity-60 blur-xl transition-all duration-500"></div>
+          
+          <div class="relative w-72 h-84 sm:w-80 sm:h-96 rounded-2xl overflow-hidden glass-card border border-white/15 bg-slate-900/80 flex flex-col items-center justify-center p-3 text-center transition-transform duration-500 group-hover:scale-[1.01]">
+            <!-- ========================================================
+                 TODO: REPLACE WITH YOUR PROFILE PICTURE
+                 Save your photo in the same folder as `profile.jpg` or use a link
+                 ======================================================== -->
+            <img 
+              src="profile.jpg" alt="Ibrahim Abdo" class="w-full h-full object-cover rounded-xl transition-all duration-500 group-hover:scale-105" 
+              alt="Ibrahim Abdo" 
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         COMPONENT 2: ABOUT ME
+         ======================================================== -->
+    <section id="about" class="space-y-6">
+      <div class="border-b border-white/10 pb-4">
+        <h2 class="text-3xl font-bold text-white flex items-center gap-3">
+          <i data-lucide="user" class="text-brand-400"></i> About Me
+        </h2>
+        <p class="text-slate-400 text-sm mt-1">Background, development philosophy, and architectural approach</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="lg:col-span-2 glass-card p-6 sm:p-8 rounded-2xl space-y-4">
+          <p class="text-slate-300 leading-relaxed">
+            I am a Computer Science student and an AI Automation Scholar at the <strong>Digital Egypt Pioneers Initiative (DEPI)</strong>. My specialization centers on standalone Windows desktop engineering and private, local generative AI systems.
+          </p>
+          <p class="text-slate-300 leading-relaxed">
+            Rather than building heavy, dependency-bloated web apps for every task, I build sleek, high-speed Python desktop interfaces using CustomTkinter paired with deterministic local LLM orchestration (Ollama). From building mathematical solvers that calculate step-by-step Gauss-Jordan inverses without precision loss, to automated enterprise sample loggers with append-only crash protection, I focus on stability, offline privacy, and zero recurring API fees.
+          </p>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-white/10 text-center">
+            <div class="p-3 bg-white/5 rounded-lg border border-white/5 hover:border-brand-500/30 transition-all">
+              <span class="text-2xl font-bold text-brand-400 font-mono">100%</span>
+              <p class="text-xs text-slate-400 mt-1">Data Privacy (Offline LLMs)</p>
+            </div>
+            <div class="p-3 bg-white/5 rounded-lg border border-white/5 hover:border-brand-500/30 transition-all">
+              <span class="text-2xl font-bold text-brand-400 font-mono">0ms</span>
+              <p class="text-xs text-slate-400 mt-1">Cloud Latency</p>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="glass-card p-6 sm:p-8 rounded-2xl space-y-4">
+          <h3 class="text-lg font-bold text-white flex items-center gap-2">
+            <i data-lucide="compass" class="text-brand-400 w-5 h-5"></i> Core Focus
+          </h3>
+          <ul class="space-y-3 text-sm text-slate-300">
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-400 mt-0.5 shrink-0"></i>
+              CustomTkinter desktop software for Windows.
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-400 mt-0.5 shrink-0"></i>
+              Offline LLM structured outputs (JSON Schemas).
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-400 mt-0.5 shrink-0"></i>
+              Mathematical algorithm design (C++ & Python).
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-400 mt-0.5 shrink-0"></i>
+              Database modeling (DDL SQL & relational schemas).
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         COMPONENT 3 & 4: SKILLS & EDUCATION
+         ======================================================== -->
+    <section id="skills" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      
+      <!-- Component 4: Skills -->
+      <div class="space-y-6">
+        <div class="border-b border-white/10 pb-4">
+          <h2 class="text-2xl font-bold text-white flex items-center gap-3">
+            <i data-lucide="cpu" class="text-brand-400"></i> Core Skills & Tools
+          </h2>
+          <p class="text-slate-400 text-xs mt-1">Technical competencies categorized by stack</p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="glass-card p-4 rounded-xl hover:-translate-y-1 transition-all">
+            <h3 class="text-sm font-bold text-brand-400 uppercase tracking-wider mb-2 font-mono">Languages & Frameworks</h3>
+            <div class="flex flex-wrap gap-2 text-xs">
+              <span class="px-2.5 py-1 rounded bg-white/5 border border-white/5 text-slate-200 hover:border-brand-500/30 transition-colors">Python</span>
+              <span class="px-2.5 py-1 rounded bg-white/5 border border-white/5 text-slate-200 hover:border-brand-500/30 transition-colors">CustomTkinter</span>
+              <span class="px-2.5 py-1 rounded bg-white/5 border border-white/5 text-slate-200 hover:border-brand-500/30 transition-colors">C++</span>
+              <span class="px-2.5 py-1 rounded bg-white/5 border border-white/5 text-slate-200 hover:border-brand-500/30 transition-colors">SQL (DDL / Relational)</span>
+              <span class="px-2.5 py-1 rounded bg-white/5 border border-white/5 text-slate-200 hover:border-brand-500/30 transition-colors">JSON / Pydantic</span>
+            </div>
+          </div>
+
+          <div class="glass-card p-4 rounded-xl hover:-translate-y-1 transition-all">
+            <h3 class="text-sm font-bold text-brand-400 uppercase tracking-wider mb-2 font-mono">AI & Automation</h3>
+            <div class="flex flex-wrap gap-2 text-xs">
+              <span class="px-2.5 py-1 rounded bg-white/5 border border-white/5 text-slate-200 hover:border-brand-500/30 transition-colors">Ollama (Llama 3.1 / Mistral)</span>
+              <span class="px-2.5 py-1 rounded bg-white/5 border border-white/5 text-slate-200 hover:border-brand-500/30 transition-colors">Structured JSON Extraction</span>
+              <span class="px-2.5 py-1 rounded bg-white/5 border border-white/5 text-slate-200 hover:border-brand-500/30 transition-colors">n8n Workflow Automation</span>
+              <span class="px-2.5 py-1 rounded bg-white/5 border border-white/5 text-slate-200 hover:border-brand-500/30 transition-colors">Deterministic Prompts</span>
+            </div>
+          </div>
+
+          <div class="glass-card p-4 rounded-xl hover:-translate-y-1 transition-all">
+            <h3 class="text-sm font-bold text-brand-400 uppercase tracking-wider mb-2 font-mono">Systems & Distribution</h3>
+            <div class="flex flex-wrap gap-2 text-xs">
+              <span class="px-2.5 py-1 rounded bg-white/5 border border-white/5 text-slate-200 hover:border-brand-500/30 transition-colors">PyInstaller Bundling</span>
+              <span class="px-2.5 py-1 rounded bg-white/5 border border-white/5 text-slate-200 hover:border-brand-500/30 transition-colors">Git & GitHub</span>
+              <span class="px-2.5 py-1 rounded bg-white/5 border border-white/5 text-slate-200 hover:border-brand-500/30 transition-colors">Windows 11 & Ubuntu Linux</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Component 3: Education & Certifications -->
+      <div class="space-y-6">
+        <div class="border-b border-white/10 pb-4">
+          <h2 class="text-2xl font-bold text-white flex items-center gap-3">
+            <i data-lucide="graduation-cap" class="text-brand-400"></i> Education & Credentials
+          </h2>
+          <p class="text-slate-400 text-xs mt-1">National scholarships & academic computer science track</p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="glass-card p-5 rounded-xl border-l-4 border-l-brand-400 hover:-translate-y-1 transition-all">
+            <span class="text-xs font-mono text-brand-400 block mb-1">National Scholarship Track</span>
+            <h3 class="text-base font-bold text-white">Digital Egypt Pioneers Initiative (DEPI)</h3>
+            <p class="text-xs text-slate-400">Ministry of Communications & Information Technology (MCIT)</p>
+            <p class="text-sm text-slate-300 mt-2">
+              Specialization: <strong>AI Automation & Freelancing Track</strong>. Comprehensive curriculum on autonomous workflow orchestration, deterministic LLM models, and freelance client management.
+            </p>
+          </div>
+
+          <div class="glass-card p-5 rounded-xl border-l-4 border-l-indigo-400 hover:-translate-y-1 transition-all">
+            <span class="text-xs font-mono text-indigo-400 block mb-1">Undergraduate Degree</span>
+            <h3 class="text-base font-bold text-white">B.Sc. in Computer Science</h3>
+            <p class="text-xs text-slate-400">Faculty of Computer & Information Sciences</p>
+            <p class="text-sm text-slate-300 mt-2">
+              Focus on algorithm efficiency, linear algebra, memory allocation, CPU scheduling algorithms, and relational database architecture.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         COMPONENT 6: OFFERED SERVICES
+         ======================================================== -->
+    <section id="services" class="space-y-6">
+      <div class="border-b border-white/10 pb-4">
+        <h2 class="text-3xl font-bold text-white flex items-center gap-3">
+          <i data-lucide="briefcase" class="text-brand-400"></i> Offered Services
+        </h2>
+        <p class="text-slate-400 text-sm mt-1">High-value services tailored for technical and commercial clients</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass-card p-6 rounded-2xl space-y-4 hover:-translate-y-1.5 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center">
+            <i data-lucide="layout-grid" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white">Custom Python Desktop Software</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Fast, responsive Windows applications built in CustomTkinter. Delivered as standalone, zero-setup `.exe` packages with built-in data persistence.
+          </p>
+          <ul class="text-xs text-slate-400 space-y-1.5 pt-2 border-t border-white/5">
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-400"></i> Single-click portable executables</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-400"></i> Append-only fault recovery</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-400"></i> Dark-mode aesthetic & responsive grid</li>
+          </ul>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl space-y-4 hover:-translate-y-1.5 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center">
+            <i data-lucide="bot" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white">Local, Privacy-First AI Systems</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Air-gapped LLM setups using Ollama. Process proprietary support tickets, summarize transcripts, and enforce strict Pydantic JSON schemas locally.
+          </p>
+          <ul class="text-xs text-slate-400 space-y-1.5 pt-2 border-t border-white/5">
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> No recurring monthly token costs</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> 100% internal data privacy</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> Deterministic outputs (rigid temp 0.2)</li>
+          </ul>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl space-y-4 hover:-translate-y-1.5 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-teal-500/10 text-teal-400 flex items-center justify-center">
+            <i data-lucide="git-branch" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white">Automated Pipelines & Integrations</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Multi-node automations linking local scripts, n8n instances, webhooks, and structured databases for hands-off operational management.
+          </p>
+          <ul class="text-xs text-slate-400 space-y-1.5 pt-2 border-t border-white/5">
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-teal-400"></i> Instant email & support ticket triage</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-teal-400"></i> Automated compliance & PII checks</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-teal-400"></i> Automatic failover & error logging</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         COMPONENT 7: PROJECTS & CASE STUDIES (Direct from your screenshots)
+         ======================================================== -->
+    <section id="projects" class="space-y-8">
+      <div class="border-b border-white/10 pb-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <h2 class="text-3xl font-bold text-white flex items-center gap-3">
+              <i data-lucide="folder-kanban" class="text-brand-400"></i> Featured Projects & Case Studies
+            </h2>
+            <p class="text-slate-400 text-sm mt-1">Real-world applications formatted as Problem, Solution, and Outcome (DEPI Standard)</p>
+          </div>
+          <span class="text-xs font-mono text-slate-400 bg-white/5 px-3 py-1.5 rounded-lg border border-white/10 self-start sm:self-auto">
+            3 High-Impact Works
+          </span>
+        </div>
+      </div>
+
+      <div class="space-y-8">
+        
+        <!-- PROJECT 1: NEXUS AI (From Screenshot 2026-09-28 153856.png) -->
+        <div class="glass-card p-6 sm:p-8 rounded-2xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center hover:-translate-y-1 transition-all">
+          <div class="lg:col-span-5 space-y-4">
+            <div class="relative rounded-xl overflow-hidden border border-white/10 aspect-video bg-slate-900 flex items-center justify-center group">
+              <!-- ========================================================
+                   PROJECT 1 SCREENSHOT (Screenshot 2026-09-28 153856.png)
+                   Place your screenshot file in the folder as "nexus-ai.png"
+                   ======================================================== -->
+              <img 
+                src="nexus-ai.png" 
+                alt="NexusAI Local LLM Studio Interface" 
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80';"
+                class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
+              />
+              <span class="absolute bottom-2 left-2 px-2.5 py-1 rounded bg-black/80 backdrop-blur-md text-[10px] font-mono text-brand-400 border border-brand-400/30">
+                NexusAI Engine • llama3.1
+              </span>
+            </div>
+
+            <!-- PROJECT 1 REPO / DEMO LINKS -->
+            <div class="flex gap-3 text-xs font-semibold">
+                
+              <a href="#" class="px-4 py-2 rounded-lg bg-brand-500/20 text-brand-300 hover:bg-brand-500/30 flex items-center gap-1.5 transition-all hover:scale-[1.02]">
+                <i data-lucide="file-json" class="w-4 h-4"></i> Sample JSON Schemas
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 space-y-4">
+            <span class="text-xs font-mono text-brand-400 uppercase tracking-widest">Case Study #01 • Local LLM Automation & Deterministic Studio</span>
+            <h3 class="text-2xl font-bold text-white">NexusAI: Deterministic Prompt Engine & Automation Node</h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+              <div class="p-3 bg-white/5 rounded-lg border border-white/5">
+                <strong class="text-rose-400 block mb-1">Problem:</strong>
+                Companies handling sensitive customer tickets cannot risk sending unredacted PII or emergency server credentials to external cloud LLM APIs.
+              </div>
+              <div class="p-3 bg-white/5 rounded-lg border border-white/5">
+                <strong class="text-brand-400 block mb-1">Solution:</strong>
+                Engineered an offline Ollama workstation (llama3.1 at 0.2 temperature lock) with custom SLA blueprints and structured JSON extraction.
+              </div>
+              <div class="p-3 bg-white/5 rounded-lg border border-white/5">
+                <strong class="text-emerald-400 block mb-1">Outcome:</strong>
+                Sub-4s deterministic ticket classification (`ticket_severity`, `contains_pii`, `callback_number`) with 100% offline data governance.
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white/5 text-slate-300 border border-white/10">Ollama (llama3.1)</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white/5 text-slate-300 border border-white/10">Rigid Temp (0.2)</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white/5 text-slate-300 border border-white/10">Structured JSON</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white/5 text-slate-300 border border-white/10">CustomTkinter GUI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 2: MATRIX SOLVER (From Screenshot 2026-09-28 151924.png) -->
+        <div class="glass-card p-6 sm:p-8 rounded-2xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center hover:-translate-y-1 transition-all">
+          <div class="lg:col-span-5 space-y-4">
+            <div class="relative rounded-xl overflow-hidden border border-white/10 aspect-video bg-slate-900 flex items-center justify-center group">
+              <!-- ========================================================
+                   PROJECT 2 SCREENSHOT (Screenshot 2026-09-28 151924.png)
+                   Place your screenshot file in the folder as "matrix-solver.png"
+                   ======================================================== -->
+              <img 
+                src="matrix-solver.png" 
+                alt="Arbitrary Matrix Inverse and Pseudoinverse Solver" 
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=800&q=80';"
+                class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
+              />
+              <span class="absolute bottom-2 left-2 px-2.5 py-1 rounded bg-black/80 backdrop-blur-md text-[10px] font-mono text-indigo-400 border border-indigo-400/30">
+                Arbitrary MxN Grid Engine
+              </span>
+            </div>
+
+            <!-- PROJECT 2 REPO / DEMO LINKS -->
+            <div class="flex gap-3 text-xs font-semibold">
+             
+              <a href="#" class="px-4 py-2 rounded-lg bg-indigo-500/20 text-indigo-300 hover:bg-indigo-500/30 flex items-center gap-1.5 transition-all hover:scale-[1.02]">
+                <i data-lucide="calculator" class="w-4 h-4"></i> Mathematical Docs
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 space-y-4">
+            <span class="text-xs font-mono text-indigo-400 uppercase tracking-widest">Case Study #02 • Numerical Algorithms & Linear Algebra</span>
+            <h3 class="text-2xl font-bold text-white">Arbitrary Matrix Inverse & Pseudoinverse Solver</h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+              <div class="p-3 bg-white/5 rounded-lg border border-white/5">
+                <strong class="text-rose-400 block mb-1">Problem:</strong>
+                Standard tools either approximate values using floating point numbers (causing roundoff drift) or lack step-by-step reduction traces for teaching and verification.
+              </div>
+              <div class="p-3 bg-white/5 rounded-lg border border-white/5">
+                <strong class="text-brand-400 block mb-1">Solution:</strong>
+                Created a dynamic matrix GUI supporting arbitrary (MxN) dimensions, toggles between exact fractions and decimals, and step-by-step reduction traces.
+              </div>
+              <div class="p-3 bg-white/5 rounded-lg border border-white/5">
+                <strong class="text-emerald-400 block mb-1">Outcome:</strong>
+                Computes standard inverses, Moore-Penrose pseudoinverses, and full REF/RREF forms with transparent pivot diagnostics.
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white/5 text-slate-300 border border-white/10">Dynamic MxN Grid</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white/5 text-slate-300 border border-white/10">Exact Fraction Engine</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white/5 text-slate-300 border border-white/10">Pseudoinverse</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white/5 text-slate-300 border border-white/10">CustomTkinter</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 3: LAB MANAGEMENT (From Screenshot 2026-06-11 181332.png) -->
+        <div class="glass-card p-6 sm:p-8 rounded-2xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center hover:-translate-y-1 transition-all">
+          <div class="lg:col-span-5 space-y-4">
+            <div class="relative rounded-xl overflow-hidden border border-white/10 aspect-video bg-slate-900 flex items-center justify-center group">
+              <!-- ========================================================
+                   PROJECT 3 SCREENSHOT (Screenshot 2026-06-11 181332.png)
+                   Place your screenshot file in the folder as "lims-app.png"
+                   ======================================================== -->
+              <img 
+                src="lims-app.png" 
+                alt="Long-Lifespan Lab Management System" 
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80';"
+                class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
+              />
+              <span class="absolute bottom-2 left-2 px-2.5 py-1 rounded bg-black/80 backdrop-blur-md text-[10px] font-mono text-teal-400 border border-teal-400/30">
+                Desktop Software (.EXE)
+              </span>
+            </div>
+
+            <!-- PROJECT 3 REPO / DEMO LINKS -->
+            <div class="flex gap-3 text-xs font-semibold">
+
+              <a href="#" class="px-4 py-2 rounded-lg bg-teal-500/20 text-teal-300 hover:bg-teal-500/30 flex items-center gap-1.5 transition-all hover:scale-[1.02]">
+                <i data-lucide="download" class="w-4 h-4"></i> Download Executable
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 space-y-4">
+            <span class="text-xs font-mono text-teal-400 uppercase tracking-widest">Case Study #03 • Medical & Clinical Desktop Tool</span>
+            <h3 class="text-2xl font-bold text-white">Long-Lifespan Lab Management System</h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+              <div class="p-3 bg-white/5 rounded-lg border border-white/5">
+                <strong class="text-rose-400 block mb-1">Problem:</strong>
+                Diagnostic clinics faced frequent sample log misplacement, file corruption on crashes, and cumbersome software setups on workstation PCs.
+              </div>
+              <div class="p-3 bg-white/5 rounded-lg border border-white/5">
+                <strong class="text-brand-400 block mb-1">Solution:</strong>
+                Architected a standalone CustomTkinter application featuring instant search by Name or Sample ID, photo linking, and append-only recovery logs.
+              </div>
+              <div class="p-3 bg-white/5 rounded-lg border border-white/5">
+                <strong class="text-emerald-400 block mb-1">Outcome:</strong>
+                Complete data resilience across power cuts, smooth theme toggling, and clean single-binary distribution via PyInstaller.
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white/5 text-slate-300 border border-white/10">CustomTkinter</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white/5 text-slate-300 border border-white/10">Append-Only Logs</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white/5 text-slate-300 border border-white/10">Dynamic Filtering</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white/5 text-slate-300 border border-white/10">PyInstaller</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         COMPONENT 5 & 8: EXPERIENCE & ACHIEVEMENTS
+         ======================================================== -->
+    <section id="experience" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      
+      <!-- Component 5: Work Experience -->
+      <div class="space-y-6">
+        <div class="border-b border-white/10 pb-4">
+          <h2 class="text-2xl font-bold text-white flex items-center gap-3">
+            <i data-lucide="history" class="text-brand-400"></i> Practical Experience
+          </h2>
+          <p class="text-slate-400 text-xs mt-1">Freelance delivery & software engineering track</p>
+        </div>
+
+        <div class="space-y-4 border-l border-white/15 pl-4 ml-2">
+          <div class="relative group">
+            <div class="w-3 h-3 rounded-full bg-brand-400 absolute -left-[23px] top-1.5 ring-4 ring-slate-950 transition-transform group-hover:scale-125"></div>
+            <span class="text-xs font-mono text-slate-400">2026 - Present</span>
+            <h3 class="text-base font-bold text-white">Freelance AI Automation Engineer</h3>
+            <p class="text-xs text-brand-400">Independent Consultant</p>
+            <p class="text-sm text-slate-300 mt-1">
+              Building autonomous lead routing, email triage agents, and custom Python desktop applications for clients.
+            </p>
+          </div>
+
+          <div class="relative group">
+            <div class="w-3 h-3 rounded-full bg-slate-600 absolute -left-[23px] top-1.5 ring-4 ring-slate-950 transition-transform group-hover:scale-125"></div>
+            <span class="text-xs font-mono text-slate-400">2025 - 2026</span>
+            <h3 class="text-base font-bold text-white">Desktop Application Developer</h3>
+            <p class="text-xs text-slate-400">Academic & Client Implementations</p>
+            <p class="text-sm text-slate-300 mt-1">
+              Engineered LIMS clinical inventory system, custom matrix algorithms, and multi-platform utility tools.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Component 8: Achievements & Recognition -->
+      <div class="space-y-6">
+        <div class="border-b border-white/10 pb-4">
+          <h2 class="text-2xl font-bold text-white flex items-center gap-3">
+            <i data-lucide="award" class="text-brand-400"></i> Achievements
+          </h2>
+          <p class="text-slate-400 text-xs mt-1">Milestones and competitive credentials</p>
+        </div>
+
+        <div class="space-y-3">
+          <div class="glass-card p-4 rounded-xl flex items-start gap-4 hover:-translate-y-1 transition-all">
+            <div class="p-2.5 rounded-lg bg-amber-500/10 text-amber-400 shrink-0">
+              <i data-lucide="trophy" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-sm font-bold text-white">DEPI AI Automation Scholar</h3>
+              <p class="text-xs text-slate-300 mt-0.5">Selected into Egypt's national tech scholarship track based on competitive academic evaluation.</p>
+            </div>
+          </div>
+
+          <div class="glass-card p-4 rounded-xl flex items-start gap-4 hover:-translate-y-1 transition-all">
+            <div class="p-2.5 rounded-lg bg-brand-500/10 text-brand-400 shrink-0">
+              <i data-lucide="code-2" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-sm font-bold text-white">Competitive Programming Problem Solver</h3>
+              <p class="text-xs text-slate-300 mt-0.5">Active C++ solver on Codeforces focusing on arithmetic algorithms, modulo operations, and array memory optimization.</p>
+            </div>
+          </div>
+
+          <div class="glass-card p-4 rounded-xl flex items-start gap-4 hover:-translate-y-1 transition-all">
+            <div class="p-2.5 rounded-lg bg-teal-500/10 text-teal-400 shrink-0">
+              <i data-lucide="shield-check" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-sm font-bold text-white">Zero Data Loss Protocol Validation</h3>
+              <p class="text-xs text-slate-300 mt-0.5">Stress-tested append-only recovery logs across simulated OS power failures with 100% state recreation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ========================================================
+         COMPONENT 9: TESTIMONIALS & SOCIAL PROOF
+         ======================================================== -->
+    <section id="testimonials" class="space-y-6">
+      <div class="border-b border-white/10 pb-4">
+        <h2 class="text-3xl font-bold text-white flex items-center gap-3">
+          <i data-lucide="quote" class="text-brand-400"></i> Client Feedback & Social Proof
+        </h2>
+        <p class="text-slate-400 text-sm mt-1">Endorsements from collaborators, academic supervisors, and clients</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="glass-card p-6 sm:p-7 rounded-2xl space-y-4 hover:-translate-y-1 transition-all">
+          <div class="flex items-center gap-1 text-amber-400 text-sm">
+            ★★★★★
+          </div>
+          <p class="text-sm text-slate-300 italic leading-relaxed">
+            "Ibrahim built our laboratory sample management system with exceptional attention to stability. The CustomTkinter interface is sleek, and the automatic data recovery gave our operators absolute peace of mind."
+          </p>
+          <div class="border-t border-white/10 pt-3 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-brand-500/20 text-brand-400 flex items-center justify-center font-bold text-xs">
+              CL
+            </div>
+            <div>
+              <h4 class="text-xs font-bold text-white">Clinical Lab Supervisor</h4>
+              <p class="text-[11px] text-slate-400">Medical Diagnostic Facility</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card p-6 sm:p-7 rounded-2xl space-y-4 hover:-translate-y-1 transition-all">
+          <div class="flex items-center gap-1 text-amber-400 text-sm">
+            ★★★★★
+          </div>
+          <p class="text-sm text-slate-300 italic leading-relaxed">
+            "NexusAI gave our operations team exactly what we needed: complete local analysis of confidential customer tickets with strict Pydantic JSON schemas. Zero cloud fees, zero data leaks."
+          </p>
+          <div class="border-t border-white/10 pt-3 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-xs">
+              AI
+            </div>
+            <div>
+              <h4 class="text-xs font-bold text-white">Operations Director</h4>
+              <p class="text-[11px] text-slate-400">Infrastructure Support Team</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         COMPONENT 10: CALL TO ACTION & CONTACT INFORMATION
+         (WhatsApp, Gmail, Discord)
+         ======================================================== -->
+    <section id="contact" class="glass-card rounded-3xl p-8 sm:p-12 border border-brand-500/30 text-center space-y-8 relative overflow-hidden">
+      <div class="absolute -right-16 -top-16 w-64 h-64 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -left-16 -bottom-16 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-2xl mx-auto space-y-3 relative z-10">
+        <span class="text-xs font-mono uppercase tracking-widest text-brand-400 font-bold">Have a project in mind?</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+          Let’s Build High-Impact Software Together
+        </h2>
+        <p class="text-slate-300 text-sm">
+          Whether you need a custom Python desktop application, an autonomous offline AI assistant, or an automated business workflow, I am available to help.
+        </p>
+      </div>
+
+      <!-- Contact Buttons Grid: WhatsApp, Gmail, Discord -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto pt-4 relative z-10">
+        
+        <!-- CONTACT 1: WHATSAPP -->
+        <!-- ========================================================
+             TODO: REPLACE PHONE NUMBER WITH YOUR WHATSAPP NUMBER
+             Example format: https://wa.me/201012345678 (no + or spaces)
+             ======================================================== -->
+        <a 
+          href="https://wa.me/201099091434" 
+          target="_blank" 
+          class="p-5 rounded-2xl bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 transition-all duration-300 hover:-translate-y-1 flex flex-col items-center gap-2 group backdrop-blur-md"
+        >
+          <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <i data-lucide="message-circle" class="w-6 h-6"></i>
+          </div>
+          <span class="text-xs font-mono text-emerald-400 uppercase tracking-wider">Instant Chat</span>
+          <span class="text-sm font-bold text-white">WhatsApp</span>
+          <span class="text-[11px] text-slate-400">+20 (10) 990 914 34</span>
+        </a>
+
+        <!-- CONTACT 2: GMAIL -->
+        <!-- ========================================================
+             TODO: REPLACE WITH YOUR GMAIL ADDRESS
+             ======================================================== -->
+        <a 
+          href="mailto:abyouseffan@gmail.com" 
+          class="p-5 rounded-2xl bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/30 transition-all duration-300 hover:-translate-y-1 flex flex-col items-center gap-2 group backdrop-blur-md"
+        >
+          <div class="w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <i data-lucide="mail" class="w-6 h-6"></i>
+          </div>
+          <span class="text-xs font-mono text-rose-400 uppercase tracking-wider">Direct Email</span>
+          <span class="text-sm font-bold text-white">Gmail</span>
+          <span class="text-[11px] text-slate-400">abyouseffan@gmail.com</span>
+        </a>
+
+        <!-- CONTACT 3: DISCORD -->
+        <!-- ========================================================
+             TODO: REPLACE WITH YOUR DISCORD USERNAME
+             ======================================================== -->
+        <div 
+          onclick="copyDiscord()" 
+          class="p-5 rounded-2xl bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/30 transition-all duration-300 hover:-translate-y-1 flex flex-col items-center gap-2 cursor-pointer group backdrop-blur-md"
+        >
+          <div class="w-12 h-12 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <i data-lucide="message-square" class="w-6 h-6"></i>
+          </div>
+          <span class="text-xs font-mono text-indigo-400 uppercase tracking-wider">Community & Voice</span>
+          <span class="text-sm font-bold text-white">Discord</span>
+          <span id="discord-label" class="text-[11px] text-slate-400">1brah1m____</span>
+        </div>
+
+      </div>
+
+      <div class="pt-6 relative z-10">
+        <a href="mailto:ibrahimabdo.dev@gmail.com" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-brand-500 hover:bg-brand-400 text-slate-950 font-bold transition-all duration-300 shadow-xl shadow-brand-500/25 hover:shadow-brand-500/40 hover:scale-[1.02] active:scale-[0.98]">
+          Start a Project Together <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================
+       FOOTER
+       ======================================================== -->
+  <footer class="border-t border-white/10 py-8 px-6 text-center text-xs text-slate-500 font-mono">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 Ibrahim Abdo. Built in accordance with DEPI Portfolio Standards.</p>
+      <div class="flex gap-4 text-slate-400">
+        <span>Python</span> • <span>CustomTkinter</span> • <span>Ollama</span> • <span>n8n</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================
+       SCRIPTS: ICONS, CURSOR GLOW & DISCORD UTILITY
+       ======================================================== -->
+  <script>
+    lucide.createIcons();
+
+    // Subtle Mouse Cursor Follow Glow (Throttled for Performance)
+    const glow = document.getElementById('cursor-glow');
+    let ticking = false;
+
+    window.addEventListener('mousemove', (e) => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          glow.style.left = `${e.clientX}px`;
+          glow.style.top = `${e.clientY}px`;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    // Active Navigation Link Highlighting on Scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      const scrollY = window.pageYOffset;
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 140;
+        const sectionHeight = section.offsetHeight;
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('text-brand-400');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('text-brand-400');
+        }
+      });
+    });
+
+    // Discord Username Clipboard Copy Utility
+    function copyDiscord() {
+      // TODO: Replace with your actual Discord username
+      const discordUsername = "1brah1m____";
+      navigator.clipboard.writeText(discordUsername);
+      const label = document.getElementById('discord-label');
+      label.innerText = "Copied to clipboard!";
+      label.classList.add('text-brand-400');
+      setTimeout(() => {
+        label.innerText = discordUsername;
+        label.classList.remove('text-brand-400');
+      }, 2500);
+    }
+  </script>
+</body>
+</html>
